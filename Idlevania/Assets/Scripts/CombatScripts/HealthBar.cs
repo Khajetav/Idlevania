@@ -9,16 +9,22 @@ public class HealthBar : MonoBehaviour
     public int currentHealth = 100;
     private int maxHealth = 100;
 
+    private void Start()
+    {
+        healthFillImage.fillAmount = maxHealth;
+        currentHealth = maxHealth;
+    }
+
     public void UpdateHealth(int damage)
     {
-        if ((currentHealth - damage) < 0)
+        if ((currentHealth - damage) >= 0)
         {
-            healthFillImage.fillAmount = (currentHealth - damage) / maxHealth;
+            currentHealth -= damage;
+            healthFillImage.fillAmount =(float) currentHealth / maxHealth;
         }
         else
         {
             healthFillImage.fillAmount = 0;
         }
     }
-    
 }
