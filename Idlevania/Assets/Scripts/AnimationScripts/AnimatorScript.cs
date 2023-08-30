@@ -15,4 +15,9 @@ public class AnimatorScript : MonoBehaviour
     {
         objectAnimator.SetTrigger("Fighting");
     }
+
+    public void IdleAnimation()
+    {
+        objectAnimator.SetBool("Idle", true);
+    }
 }

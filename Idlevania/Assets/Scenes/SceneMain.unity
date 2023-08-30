@@ -2205,7 +2205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090469645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -501.69598, y: -558.144, z: 0}
+  m_LocalPosition: {x: -501.696, y: -558.144, z: 0}
   m_LocalScale: {x: 812.9664, y: 812.9664, z: 812.9664}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2331,6 +2331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fc98fb6bbffd040ae2725b0ecff4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackTimer: 0
   attackInterval: 2
   damage: 10
 --- !u!114 &1090469653
@@ -2392,8 +2393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -23.649994, y: 0}
+  m_SizeDelta: {x: 47.31, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1136753198
 MonoBehaviour:
@@ -3111,6 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fc98fb6bbffd040ae2725b0ecff4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackTimer: 0
   attackInterval: 2
   damage: 10
 --- !u!1 &1362790544
