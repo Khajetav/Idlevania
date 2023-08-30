@@ -10,13 +10,11 @@ public class EnemyMovementControllerScript : MonoBehaviour
     public float movementSpeed = 0.075f;
 
     public bool playerContact = false;
-    private ScrollingTexture sceneBackground;
     private Vector3 characterPosition;
 
     private void Start()
     {
         characterPosition = GameObject.Find("Character").transform.position;
-        sceneBackground = this.GetComponent<ScrollingTexture>();
     }
 
     private void Update()
@@ -24,7 +22,6 @@ public class EnemyMovementControllerScript : MonoBehaviour
         if (playerContact)
         {
             Debug.Log("Enemy collided with player!");
-            sceneBackground.isScrolling = false;
         }
         else
         {

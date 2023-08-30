@@ -13,6 +13,6 @@ public class AnimatorScript : MonoBehaviour
 
     public void FightingAnimation()
     {
-        objectAnimator.SetBool("Fighting", true);
+        objectAnimator.SetTrigger("Fighting");
     }
 }
