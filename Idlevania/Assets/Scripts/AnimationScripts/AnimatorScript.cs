@@ -29,5 +29,6 @@ public class AnimatorScript : MonoBehaviour
 
     internal void DeathAnimation()
     {
+        GameObject.Find("ImageBlackout").GetComponent<Animator>().SetTrigger("Blackout");
     }
 }
