@@ -35,4 +35,8 @@ public class EnemyMovementControllerScript : MonoBehaviour
     {
         enemiesOnField.Add(enemy);
     }
+    public void RemoveDeadEnemieFromList()
+    {
+        enemiesOnField.RemoveAt(0);
+    }
 }

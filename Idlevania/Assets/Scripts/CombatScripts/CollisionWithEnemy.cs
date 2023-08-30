@@ -10,8 +10,8 @@ public class CollisionWithEnemy : MonoBehaviour
         {
             GameObject.Find("CanvasMain").GetComponent<ScrollingTexture>().isScrolling = false;
             GameObject.Find("CanvasMain").GetComponent<EnemyMovementControllerScript>().playerContact = true;   
-            collision.gameObject.GetComponent<CombatScript>().AttackOpponent(collision.gameObject.GetComponent<HealthBar>());
-            this.gameObject.GetComponent<CombatScript>().AttackOpponent(this.gameObject.GetComponent<HealthBar>());
+            collision.gameObject.GetComponent<CombatScript>().AttackOpponent(this.gameObject.GetComponent<HealthBar>(), this.gameObject);
+            this.gameObject.GetComponent<CombatScript>().AttackOpponent(collision.gameObject.GetComponent<HealthBar>(), collision.gameObject);
         }
     }
 }

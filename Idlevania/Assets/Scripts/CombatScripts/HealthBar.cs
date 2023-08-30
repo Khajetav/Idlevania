@@ -15,7 +15,7 @@ public class HealthBar : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void UpdateHealth(int damage)
+    public int UpdateHealth(int damage)
     {
         if ((currentHealth - damage) >= 0)
         {
@@ -25,6 +25,8 @@ public class HealthBar : MonoBehaviour
         else
         {
             healthFillImage.fillAmount = 0;
+            currentHealth = 0;
         }
+        return currentHealth;
     }
 }

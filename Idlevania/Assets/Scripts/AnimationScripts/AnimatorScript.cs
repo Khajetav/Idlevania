@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,5 +20,14 @@ public class AnimatorScript : MonoBehaviour
     public void IdleAnimation()
     {
         objectAnimator.SetBool("Idle", true);
+    }
+
+    public void WalkingAnimation()
+    {
+        objectAnimator.SetBool("Idle", false);
+    }
+
+    internal void DeathAnimation()
+    {
     }
 }
