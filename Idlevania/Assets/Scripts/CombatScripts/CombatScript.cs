@@ -31,6 +31,7 @@ public class CombatScript : MonoBehaviour
         if (isAttacking)
         {
             attackTimer += Time.deltaTime;
+
             try
             {
                 objectAnimator.IdleAnimation();
@@ -42,47 +43,9 @@ public class CombatScript : MonoBehaviour
 
             if (attackTimer >= attackInterval)
             {
-                try
-                {
-                    objectAnimator.FightingAnimation();
-                }
-                catch
-                {
-                    Debug.Log(string.Format("{0} doesn't have Fighting Animation", this.gameObject.name));
-                }
 
                 attackTimer = 0f;
-                // returns opponent current health
-                int currentHealth = opponentHealth.UpdateHealth(damage);
-                // If opponents health drops to zero
-                if (currentHealth == 0)
-                {
-                    // And this opponent is player
-                    if (opponent.gameObject.CompareTag("Player"))
-                    {
-                        // GAME OVER!!!!
-                        Debug.Log("Game over!");
-                        // Player stops Attacking Script
-                        opponent.GetComponent<CombatScript>().PlayerDeath();
-                        isAttacking = false;
-                    }
-                    // And this opponent is Enemy
-                    else
-                    {
-                        // Background scrolling resumes
-                        scrollingTexture.isScrolling = true;
-                        // Enemies hovers towards player again
-                        enemyMovementController.playerContact = false;
-                        // Players starts walking animation
-                        objectAnimator.WalkingAnimation();
-                        // Removes enemy from list. This could be deleted for later
-                        enemyMovementController.RemoveDeadEnemieFromList();
-                        // Player stops Attacking Script
-                        isAttacking = false;
-                        // Enemy object gets deleted :0
-                        Destroy(opponent.gameObject);
-                    }
-                }
+                Attack();
             }
         }
     }
@@ -97,5 +60,51 @@ public class CombatScript : MonoBehaviour
     {
         isAttacking = false;
         objectAnimator.DeathAnimation();
+    }
+    public bool fighting()
+    {
+        return isAttacking;
+    }
+
+    public void Attack()
+    {
+        try
+        {
+            objectAnimator.FightingAnimation();
+        }
+        catch
+        {
+            Debug.Log(string.Format("{0} doesn't have Fighting Animation", this.gameObject.name));
+        }
+        int currentHealth = opponentHealth.UpdateHealth(damage);
+        // If opponents health drops to zero
+        if (currentHealth == 0)
+        {
+            // And this opponent is player
+            if (opponent.gameObject.CompareTag("Player"))
+            {
+                // GAME OVER!!!!
+                Debug.Log("Game over!");
+                // Player stops Attacking Script
+                opponent.GetComponent<CombatScript>().PlayerDeath();
+                isAttacking = false;
+            }
+            // And this opponent is Enemy
+            else
+            {
+                // Background scrolling resumes
+                scrollingTexture.isScrolling = true;
+                // Enemies hovers towards player again
+                enemyMovementController.playerContact = false;
+                // Players starts walking animation
+                objectAnimator.WalkingAnimation();
+                // Removes enemy from list. This could be deleted for later
+                enemyMovementController.RemoveDeadEnemieFromList();
+                // Player stops Attacking Script
+                isAttacking = false;
+                // Enemy object gets deleted :0
+                Destroy(opponent.gameObject);
+            }
+        }
     }
 }
