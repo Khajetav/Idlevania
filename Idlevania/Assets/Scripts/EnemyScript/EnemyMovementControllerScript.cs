@@ -5,7 +5,7 @@ public class EnemyMovementControllerScript : MonoBehaviour
 {
     [Header("Enemy movement settings")]
     [SerializeField]
-    private List<Transform> enemiesOnField;
+    private List<GameObject> enemiesOnField;
     [Range(0, 2f)]
     public float movementSpeed = 0.075f;
 
@@ -30,5 +30,9 @@ public class EnemyMovementControllerScript : MonoBehaviour
                 item.transform.position = Vector3.MoveTowards(item.transform.position, characterPosition, movementSpeed * Time.deltaTime);
             }
         }
+    }
+    public void addEnemiesToListOnField(GameObject enemy)
+    {
+        enemiesOnField.Add(enemy);
     }
 }
