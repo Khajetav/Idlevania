@@ -16,6 +16,7 @@ public class CollisionWithPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             m_EnemyMovementControllerScript.playerContact = true;
+            collision.gameObject.GetComponent<AnimatorScript>().FightingAnimation();
         }
     }
 }
