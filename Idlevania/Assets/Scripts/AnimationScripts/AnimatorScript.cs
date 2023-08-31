@@ -32,6 +32,7 @@ public class AnimatorScript : MonoBehaviour
     {
         GameObject.Find("ImageBorder").GetComponent<Animator>().SetTrigger("Death");
         GameObject.Find("ImageBlackout").GetComponent<Animator>().SetTrigger("Blackout");
+        objectAnimator.SetTrigger("Death");
     }
 
     public void FightingIdleAnimation()

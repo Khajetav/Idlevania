@@ -44,7 +44,7 @@ public class CombatScript : MonoBehaviour
                 Debug.Log(string.Format("{0} doesn't have Idle Animation", this.gameObject.name));
             }
             // Animation starts a few milliseconds earlier
-            if (attackTimer >= attackInterval/ startAttackAnimation && !isAnimating)
+            if (attackTimer >= attackInterval / startAttackAnimation && !isAnimating)
             {
                 isAnimating = true;
                 try
