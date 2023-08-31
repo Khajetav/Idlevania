@@ -24,13 +24,18 @@ public class AnimatorScript : MonoBehaviour
 
     public void WalkingAnimation()
     {
+        objectAnimator.SetBool("FightingIdle", false);
         objectAnimator.SetBool("Idle", false);
     }
 
-
-    internal void DeathAnimation()
+    public void DeathAnimation()
     {
         GameObject.Find("ImageBorder").GetComponent<Animator>().SetTrigger("Death");
         GameObject.Find("ImageBlackout").GetComponent<Animator>().SetTrigger("Blackout");
+    }
+
+    public void FightingIdleAnimation()
+    {
+        objectAnimator.SetBool("FightingIdle", true);
     }
 }

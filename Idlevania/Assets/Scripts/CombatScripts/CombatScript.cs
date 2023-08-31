@@ -14,6 +14,7 @@ public class CombatScript : MonoBehaviour
     private float attackTimer = 0f;
     public float attackInterval = 2f;
     private bool isAttacking = false;
+    public float startAttackAnimation = 1.2f;
     [Header("Damage config")]
     public int damage = 10;
 
@@ -26,6 +27,8 @@ public class CombatScript : MonoBehaviour
         objectAnimator = this.gameObject.GetComponent<AnimatorScript>();
     }
 
+    private bool isAnimating = false;
+
     private void Update()
     {
         if (isAttacking)
@@ -34,16 +37,28 @@ public class CombatScript : MonoBehaviour
 
             try
             {
-                objectAnimator.IdleAnimation();
+                objectAnimator.FightingIdleAnimation();
             }
             catch
             {
                 Debug.Log(string.Format("{0} doesn't have Idle Animation", this.gameObject.name));
             }
-
+            // Animation starts a few milliseconds earlier
+            if (attackTimer >= attackInterval/ startAttackAnimation && !isAnimating)
+            {
+                isAnimating = true;
+                try
+                {
+                    objectAnimator.FightingAnimation();
+                }
+                catch
+                {
+                    Debug.Log(string.Format("{0} doesn't have Fighting Animation", this.gameObject.name));
+                }
+            }
             if (attackTimer >= attackInterval)
             {
-
+                isAnimating = false;
                 attackTimer = 0f;
                 Attack();
             }
@@ -68,14 +83,6 @@ public class CombatScript : MonoBehaviour
 
     public void Attack()
     {
-        try
-        {
-            objectAnimator.FightingAnimation();
-        }
-        catch
-        {
-            Debug.Log(string.Format("{0} doesn't have Fighting Animation", this.gameObject.name));
-        }
         int currentHealth = opponentHealth.UpdateHealth(damage);
         // If opponents health drops to zero
         if (currentHealth == 0)
