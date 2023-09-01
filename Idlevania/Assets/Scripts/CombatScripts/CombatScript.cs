@@ -9,11 +9,6 @@ public class CombatScript : MonoBehaviour
     private GameObject opponent;
     private AnimatorScript objectAnimator;
 
-    [Header("Time config")]
-    [SerializeField]
-    private float attackTimer = 0f;
-    public float attackInterval = 2f;
-    private bool isAttacking = false;
     [Header("Damage config")]
     public int damage = 10;
 
@@ -29,49 +24,12 @@ public class CombatScript : MonoBehaviour
 
     private void Update()
     {
-        if (isAttacking)
-        {
-            attackTimer += Time.deltaTime;
-
-            try
-            {
-                objectAnimator.FightingIdleAnimation();
-            }
-            catch
-            {
-                Debug.Log(string.Format("{0} doesn't have Idle Animation", this.gameObject.name));
-            }
-
-
-            if (attackTimer >= attackInterval)
-            {
-                try
-                {
-                    objectAnimator.FightingAnimation();
-                }
-                catch
-                {
-                    Debug.Log(string.Format("{0} doesn't have Fighting Animation", this.gameObject.name));
-                }
-                attackTimer = 0f;
-            }
-        }
     }
 
     public void AttackOpponent(HealthBar opponentH, GameObject opponent)
     {
-        isAttacking = true;
         opponentHealth = opponentH;
         this.opponent = opponent;
-    }
-    public void PlayerDeath()
-    {
-        isAttacking = false;
-        objectAnimator.DeathAnimation();
-    }
-    public bool fighting()
-    {
-        return isAttacking;
     }
 
     public void Attack()
@@ -86,8 +44,7 @@ public class CombatScript : MonoBehaviour
                 // GAME OVER!!!!
                 Debug.Log("Game over!");
                 // Player stops Attacking Script
-                opponent.GetComponent<CombatScript>().PlayerDeath();
-                isAttacking = false;
+                //opponent.GetComponent<CombatScript>().PlayerDeath();
             }
             // And this opponent is Enemy
             else
@@ -109,7 +66,6 @@ public class CombatScript : MonoBehaviour
                 // Removes enemy from list. This could be deleted for later
                 enemyMovementController.RemoveDeadEnemieFromList();
                 // Player stops Attacking Script
-                isAttacking = false;
                 // Enemy object gets deleted :0
                 Destroy(opponent.gameObject);
             }

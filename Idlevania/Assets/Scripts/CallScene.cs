@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CallScene : MonoBehaviour
+public class CallScene
 {
     public void CallNewScene(string name)
     {

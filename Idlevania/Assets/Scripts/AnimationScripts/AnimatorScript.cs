@@ -8,7 +8,7 @@ using UnityEngine;
 public class AnimatorScript : MonoBehaviour
 {
     private Animator objectAnimator;
-    private CallScene scene = new CallScene();
+    //private CallScene scene = new CallScene();
 
     void Start()
     {
@@ -48,7 +48,7 @@ public class AnimatorScript : MonoBehaviour
         objectAnimator.SetBool("FightingIdle", true);
     }
 
-    public void ReviveEndAnimantion()
+    public void StartScrolling()
     {
         GameObject canvasMain = GameObject.Find("CanvasMain");
         canvasMain.GetComponent<ScrollingTexture>().enabled = true;
@@ -56,10 +56,10 @@ public class AnimatorScript : MonoBehaviour
         canvasMain.GetComponent<EnemySpawning>().enabled = true;
     }
 
-    public void StartNewScene()
-    {
-        scene.CallNewScene("SceneMain");
-    }
+    //public void StartNewScene()
+    //{
+    //    scene.CallNewScene("SceneMain");
+    //}
 
     public void StartGameAnimation()
     {

@@ -1,13 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
-    private AnimatorScript anim= new AnimatorScript();
+    // Singleton code
+    // reference the GameManager using GameManager.Instance
+    private static GameManager _instance;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+            }
+            return _instance;
+        }
+    }
+
+    [SerializeField] private ScrollingTexture scrollingTexture;
+    [SerializeField] private EnemyMovementControllerScript enemyMovementController;
+    [SerializeField] private EnemySpawning enemySpawning;
+
     private void Awake()
     {
-        anim.StartGameAnimation();
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        scrollingTexture.enabled = false;
+        enemyMovementController.enabled = false;
+        enemySpawning.enabled = false;
+    }
+
+    // Character walking animation starts this
+    public void StartGameplay()
+    {
+    }
+    public void Resume()
+    {
+        scrollingTexture.enabled = true;
+        enemyMovementController.enabled = true;
+        enemySpawning.enabled = true;
+    }
+
+    public void Pause()
+    {
+        scrollingTexture.enabled = false;
+        enemyMovementController.enabled = false;
+        enemySpawning.enabled = false;
     }
 }
