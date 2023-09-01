@@ -2499,7 +2499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1006610602, guid: 58a7eb0c565eb2142988bfe2b65fd075, type: 3}
+  m_Sprite: {fileID: 1856461436, guid: 38acfb01b8af59f4f8a93a99f1c62ccc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2609,7 +2609,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.11, y: 0.32}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.11, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2646,7 +2646,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackTimer: 0
   attackInterval: 2
-  startAttackAnimation: 1.3
   damage: 10
 --- !u!114 &1090469653
 MonoBehaviour:
@@ -2763,6 +2762,7 @@ GameObject:
   - component: {fileID: 1171641195}
   - component: {fileID: 1171641196}
   - component: {fileID: 1171641198}
+  - component: {fileID: 1171641199}
   m_Layer: 5
   m_Name: CanvasMain
   m_TagString: Untagged
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171641190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd249fc2818764043aee565959f0ebbe, type: 3}
   m_Name: 
@@ -2878,7 +2878,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171641190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e930aba57a97246b2b936e89dac490, type: 3}
   m_Name: 
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171641190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24c49651171b01d499e6a84a7f842d63, type: 3}
   m_Name: 
@@ -2903,6 +2903,18 @@ MonoBehaviour:
   - {fileID: 6042745065095032077, guid: 88a4f8c2a1c2a844d83b27829d3a84c2, type: 3}
   spawnTimer: 0
   spawnInterval: 2
+--- !u!114 &1171641199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171641190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f3c15f3c32b624d8f665c5c95601d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195406118
 GameObject:
   m_ObjectHideFlags: 0

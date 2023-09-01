@@ -19,11 +19,7 @@ public class EnemyMovementControllerScript : MonoBehaviour
 
     private void Update()
     {
-        if (playerContact)
-        {
-            Debug.Log("Enemy collided with player!");
-        }
-        else
+        if (!playerContact)
         {
             foreach (var item in enemiesOnField)
             {
