@@ -28,6 +28,11 @@ public class AnimatorScript : MonoBehaviour
         objectAnimator.SetBool("Idle", false);
     }
 
+    public void StopFighting()
+    {
+        objectAnimator.SetBool("FightingIdle", false);
+    }
+
     public void DeathAnimation()
     {
         GameObject.Find("ImageBorder").GetComponent<Animator>().SetTrigger("Death");

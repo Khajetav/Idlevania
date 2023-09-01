@@ -103,8 +103,16 @@ public class CombatScript : MonoBehaviour
                 scrollingTexture.isScrolling = true;
                 // Enemies hovers towards player again
                 enemyMovementController.playerContact = false;
-                // Players starts walking animation
-                objectAnimator.WalkingAnimation();
+                // Chck if this script is enabled (This is for not overide in shop idle animation)
+                if (enemyMovementController.enabled)
+                {
+                    // Players starts walking animation
+                    objectAnimator.WalkingAnimation();
+                }
+                else
+                {
+                    objectAnimator.StopFighting();
+                }
                 // Removes enemy from list. This could be deleted for later
                 enemyMovementController.RemoveDeadEnemieFromList();
                 // Player stops Attacking Script
