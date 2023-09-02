@@ -1,20 +1,30 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScrollingTexture : MonoBehaviour
 {
     [Header("Background Settings")]
-    public float scrollSpeed;
-    public RawImage background;
+    [SerializeField] private List<Transform> backgroundList;
+    private float scrollSpeed;
+    private Vector2 leftSide;
+    private Vector2 rightSide;
+
     private void Start()
     {
-        // GameManager should be called only from Start or similar
         scrollSpeed = GameManager.Instance.globalSpeed;
+        leftSide = backgroundList[2].position;
+        rightSide = backgroundList[1].position;
     }
+
     private void Update()
     {
-        background.uvRect = new Rect(background.uvRect.position + new Vector2(scrollSpeed, 0) * Time.deltaTime, background.uvRect.size);
+        foreach (var background in backgroundList)
+        {
+            background.Translate(Vector3.left * scrollSpeed * Time.deltaTime);
+            if (background.position.x <= leftSide.x)
+            {
+                background.position = rightSide;
+            }
+        }
     }
 }

@@ -1,34 +1,34 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     // Singleton code for EnemyController
     #region singleton
     private static EnemyManager _instance;
-	public static EnemyManager Instance
-	{
-		get
-		{
-			if (_instance == null)
-			{
-				_instance = FindObjectOfType<EnemyManager>();
-			}
-			return _instance;
-		}
-	}
+    public static EnemyManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<EnemyManager>();
+            }
+            return _instance;
+        }
+    }
 
-	private void Awake()
-	{
-		if (_instance == null)
-		{
-			_instance = this;
-		}
-		else if (_instance != this)
-		{
-			Destroy(gameObject);
-		}
-	}
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
     #endregion
 
     #region variables
@@ -63,12 +63,7 @@ public class EnemyManager : MonoBehaviour
             }
             foreach (var enemy in aliveEnemyList)
             {
-                // Calculate the new position for the enemy based on background scrolling speed
-                float enemySpeedRelativeToBackground = movementSpeed; // Adjust this if needed
-                Vector3 newEnemyPosition = enemy.transform.position + new Vector3(enemySpeedRelativeToBackground, 0) * Time.deltaTime;
-
-                // Move the enemy to the new position
-                enemy.transform.position = newEnemyPosition;
+                enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, characterPosition, movementSpeed * Time.deltaTime);
             }
         }
     }
