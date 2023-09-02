@@ -7,7 +7,7 @@ public class HealthBar : MonoBehaviour
     public Image healthFillImage;
     [Range(0, 100)]
     public int currentHealth = 100;
-    private int maxHealth = 100;
+    public int maxHealth = 100;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
         if ((currentHealth - damage) >= 0)
         {
             currentHealth -= damage;
-            healthFillImage.fillAmount =(float) currentHealth / maxHealth;
+            healthFillImage.fillAmount = (float) currentHealth / maxHealth;
         }
         else
         {

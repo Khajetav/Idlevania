@@ -62,9 +62,8 @@ GameObject:
   - component: {fileID: 7941972897446180098}
   - component: {fileID: 8652809052122206241}
   - component: {fileID: 6514618073961930867}
-  - component: {fileID: 8203843321340442508}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: tempBeastEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthFillImage: {fileID: 7084513740641417494}
   currentHealth: 100
+  maxHealth: 100
 --- !u!114 &8652809052122206241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,9 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fc98fb6bbffd040ae2725b0ecff4f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTimer: 0
-  attackInterval: 2
-  startAttackAnimation: 1.2
   damage: 5
 --- !u!95 &6514618073961930867
 Animator:
@@ -252,18 +249,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8203843321340442508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6042745065095032077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1868dc25ca037845be282f6eeae7fa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6823593551223855997
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class ScrollingTexture : MonoBehaviour
 {
     [Header("Background Settings")]
-    [Range(0f, 0.2f)]
-    public float scrollSpeed = 0.075f;
-    public bool isScrolling = true; // Change this based on your control logic
+    public float scrollSpeed;
     public RawImage background;
-
+    private void Start()
+    {
+        // GameManager should be called only from Start or similar
+        scrollSpeed = GameManager.Instance.globalSpeed;
+    }
     private void Update()
     {
-        if (isScrolling)
-        {
-            background.uvRect = new Rect(background.uvRect.position + new Vector2(scrollSpeed, 0) * Time.deltaTime, background.uvRect.size);
-        }
+        background.uvRect = new Rect(background.uvRect.position + new Vector2(scrollSpeed, 0) * Time.deltaTime, background.uvRect.size);
     }
 }
