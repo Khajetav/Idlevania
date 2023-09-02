@@ -13,8 +13,10 @@ public class ScrollingTexture : MonoBehaviour
         // GameManager should be called only from Start or similar
         scrollSpeed = GameManager.Instance.globalSpeed;
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        background.uvRect = new Rect(background.uvRect.position + new Vector2(scrollSpeed, 0) * Time.deltaTime, background.uvRect.size);
+        background.uvRect = new Rect(background.uvRect.position +
+    new Vector2(scrollSpeed, 0) * Time.deltaTime, background.uvRect.size);
     }
+
 }

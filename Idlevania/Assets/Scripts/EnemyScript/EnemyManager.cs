@@ -45,13 +45,12 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        movementSpeed = GameManager.Instance.globalSpeed;
+        movementSpeed -= GameManager.Instance.globalSpeed;
         spawnTimer = GameManager.Instance.spawnTimer;
         spawnInterval = GameManager.Instance.spawnInterval;
         characterPosition = GameObject.Find("Character").transform.position;
     }
-
-    private void Update()
+    private void FixedUpdate()
     {
         if (!playerContact)
         {
@@ -63,12 +62,7 @@ public class EnemyManager : MonoBehaviour
             }
             foreach (var enemy in aliveEnemyList)
             {
-                // Calculate the new position for the enemy based on background scrolling speed
-                float enemySpeedRelativeToBackground = movementSpeed; // Adjust this if needed
-                Vector3 newEnemyPosition = enemy.transform.position + new Vector3(enemySpeedRelativeToBackground, 0) * Time.deltaTime;
-
-                // Move the enemy to the new position
-                enemy.transform.position = newEnemyPosition;
+                enemy.transform.position = (enemy.transform.position + new Vector3(movementSpeed, 0f, 0f) * Time.deltaTime);
             }
         }
     }
