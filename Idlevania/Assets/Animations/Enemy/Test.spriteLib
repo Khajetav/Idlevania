@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Idle
+    m_Hash: 1008081451
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SkeletonIdle_0
+      m_Hash: 568627127
+      m_Sprite: {fileID: -459881224, guid: d5b8f56dfd1b1ee459082d72b4ad52e2, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 49557270, guid: 2c34edb21bb969343a0d9aea6daf9536, type: 3}
+    - m_Name: SkeletonIdle_1
+      m_Hash: 384024353
+      m_Sprite: {fileID: -1055372386, guid: d5b8f56dfd1b1ee459082d72b4ad52e2, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1768122221, guid: 2c34edb21bb969343a0d9aea6daf9536, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 2
+  - m_Name: Attack
+    m_Hash: 7088141
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SkeletonAttack_0
+      m_Hash: 948585447
+      m_Sprite: {fileID: -1036470808, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1036470808, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_1
+      m_Hash: 260928369
+      m_Sprite: {fileID: 719826539, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 719826539, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_2
+      m_Hash: 377758411
+      m_Sprite: {fileID: -331664255, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -331664255, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_3
+      m_Hash: 562238045
+      m_Sprite: {fileID: -1607523468, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1607523468, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_4
+      m_Hash: 1072138238
+      m_Sprite: {fileID: -1799603910, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1799603910, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_5
+      m_Hash: 148944744
+      m_Sprite: {fileID: 1671115593, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1671115593, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_6
+      m_Hash: 300541650
+      m_Sprite: {fileID: -543129970, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -543129970, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_7
+      m_Hash: 653186628
+      m_Sprite: {fileID: -827618229, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -827618229, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_8
+      m_Hash: 911330261
+      m_Sprite: {fileID: 2094005029, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 2094005029, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_9
+      m_Hash: 22477635
+      m_Sprite: {fileID: -1560780889, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1560780889, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_10
+      m_Hash: 324408312
+      m_Sprite: {fileID: 1650914450, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1650914450, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_11
+      m_Hash: 609297262
+      m_Sprite: {fileID: -1771433571, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1771433571, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_12
+      m_Hash: 1029206740
+      m_Sprite: {fileID: 914166897, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 914166897, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    - m_Name: SkeletonAttack_13
+      m_Hash: 174015042
+      m_Sprite: {fileID: -1373078580, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1373078580, guid: 0c19d20622855c44c8e8a5aaa1a62226, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 0
+  - m_Name: Death
+    m_Hash: 646380074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: SkeletonDeath_0
+      m_Hash: 411099090
+      m_Sprite: {fileID: -1354919124, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1354919124, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_1
+      m_Hash: 797437764
+      m_Sprite: {fileID: -773321748, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -773321748, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_2
+      m_Hash: 915324670
+      m_Sprite: {fileID: 838032203, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 838032203, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_3
+      m_Hash: 25792104
+      m_Sprite: {fileID: -1476518442, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1476518442, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_4
+      m_Hash: 535632843
+      m_Sprite: {fileID: 1299962057, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1299962057, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_5
+      m_Hash: 686435165
+      m_Sprite: {fileID: -1311966133, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1311966133, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_6
+      m_Hash: 836991719
+      m_Sprite: {fileID: 1632277186, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: 1632277186, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_7
+      m_Hash: 115624561
+      m_Sprite: {fileID: -2113902692, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -2113902692, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_8
+      m_Hash: 375085024
+      m_Sprite: {fileID: -1751102547, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1751102547, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    - m_Name: SkeletonDeath_9
+      m_Hash: 559703926
+      m_Sprite: {fileID: -1116750252, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1116750252, guid: 20aa57b0bf388cb4e9054d21de736835, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 0
+  - m_Name: GoldenSkeletonAttack_0
+    m_Hash: 865411029
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: GoldenSkeletonAttack_0
+      m_Hash: 865411029
+      m_Sprite: {fileID: 2139893690, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2139893690, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_1
+      m_Hash: 76689219
+      m_Sprite: {fileID: -476281551, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -476281551, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_2
+      m_Hash: 496729849
+      m_Sprite: {fileID: -1439958664, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1439958664, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_3
+      m_Hash: 714886767
+      m_Sprite: {fileID: -263746247, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -263746247, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_4
+      m_Hash: 888724428
+      m_Sprite: {fileID: 1444327390, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1444327390, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_5
+      m_Hash: 67103578
+      m_Sprite: {fileID: -1877861624, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1877861624, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_6
+      m_Hash: 452377312
+      m_Sprite: {fileID: -461096162, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -461096162, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_7
+      m_Hash: 770804342
+      m_Sprite: {fileID: -643524040, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -643524040, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_8
+      m_Hash: 1028560871
+      m_Sprite: {fileID: 568480136, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 568480136, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_9
+      m_Hash: 172599153
+      m_Sprite: {fileID: -971487213, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -971487213, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_10
+      m_Hash: 453664036
+      m_Sprite: {fileID: 1179532396, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1179532396, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_11
+      m_Hash: 739077554
+      m_Sprite: {fileID: 854252191, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 854252191, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_12
+      m_Hash: 889469960
+      m_Sprite: {fileID: -1786681098, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1786681098, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    - m_Name: GoldenSkeletonAttack_13
+      m_Hash: 33754270
+      m_Sprite: {fileID: -1576286457, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1576286457, guid: 99d58a6f2083122488986b985d7bfd57, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 14
+  m_PrimaryLibraryGUID: cff86dc43a742bb4aad588628fbca760
+  m_ModificationHash: 638293715700184962
+  m_Version: 1
