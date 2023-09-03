@@ -1,26 +1,47 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public class CombatScript : MonoBehaviour
 {
 
     private HealthBar opponentHealth;
-    private ScrollingTexture scrollingTexture;
-    private EnemyManager enemyManager;
     private GameObject opponent;
+    private int currentOpponentHealth;
+    private int maximumOpponentHealth;
+    private Animator animator;
 
-    [Header("Damage config")]
-    public int damage = 10;
+    private int damage;
+
+    private void Start()
+    {
+        animator = this.gameObject.GetComponent<Animator>();
+    }
 
     public void AttackOpponent(GameObject opponent)
     {
         opponentHealth = opponent.GetComponent<HealthBar>();
         this.opponent = opponent;
+        if (opponent.CompareTag("Player"))
+        {
+            currentOpponentHealth = PlayerManager.Instance.currentPlayerHealth;
+            maximumOpponentHealth = PlayerManager.Instance.maximumPlayerHealth;
+            damage = this.GetComponent<EnemyConstructor>().damage;
+            animator.SetTrigger("Attack");
+        }
+        else
+        {
+            maximumOpponentHealth = opponent.GetComponent<EnemyConstructor>().maximumEnemyHealth;
+            currentOpponentHealth = maximumOpponentHealth;
+            animator.SetBool("AttackIdle",true);
+            damage = PlayerManager.Instance.damage;
+        }
     }
 
     public void PlayerAttack()
     {
-        int currentHealth = opponentHealth.UpdateHealth(damage);
+        DoDamage();
+        opponentHealth.UpdateHealth((float)currentOpponentHealth / maximumOpponentHealth);
         // If opponents health drops to zero
-        if (currentHealth == 0)
+        if (currentOpponentHealth == 0)
         {
             // Background scrolling resumes
             GameManager.Instance.Resume();
@@ -29,12 +50,32 @@ public class CombatScript : MonoBehaviour
             // Removes enemy from list. This could be deleted for later
             EnemyManager.Instance.RemoveDeadEnemyFromList();
             // Player stops Attacking Script
+            animator.SetBool("AttackIdle",false);
             // Enemy object gets deleted :0
             Destroy(opponent.gameObject);
         }
     }
     public void EnemyAttack()
     {
-        int currentHealth = opponentHealth.UpdateHealth(damage);
+        DoDamage();
+        PlayerManager.Instance.currentPlayerHealth = currentOpponentHealth;
+        opponentHealth.UpdateHealth((float)currentOpponentHealth / maximumOpponentHealth);
+        if (currentOpponentHealth==0)
+        {
+            PlayerManager.Instance.PlayerDeathAnimation();
+        }
+        else
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
+
+    private void DoDamage()
+    {
+        currentOpponentHealth = currentOpponentHealth - damage;
+        if (currentOpponentHealth < 0)
+        {
+            currentOpponentHealth = 0;
+        }
     }
 }

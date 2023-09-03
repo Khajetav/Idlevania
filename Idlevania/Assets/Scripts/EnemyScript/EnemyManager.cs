@@ -80,7 +80,7 @@ public class EnemyManager : MonoBehaviour
         // Sets object position to 0
         spawnedObject.transform.localPosition = Vector3.zero;
         spawnedObject.transform.localRotation = Quaternion.identity;
-        spawnedObject.transform.localScale = new Vector3(-2, 2.5f, 1);
+        spawnedObject.transform.localScale = new Vector3(2, 2, 1);
         AddEnemiesToListOnField(spawnedObject);
     }
 
