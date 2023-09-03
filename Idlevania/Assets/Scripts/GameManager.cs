@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScrollingTexture scrollingTexture;
     [Space(10)]
     [Header("Global variables")]
-    [Range(0f, 0.2f)]
+    [Range(0f, 1f)]
     public float globalSpeed = 0.075f;
     public float spawnTimer = 0f;
     public float spawnInterval = 5f;

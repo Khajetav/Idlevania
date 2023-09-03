@@ -1,34 +1,34 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     // Singleton code for EnemyController
     #region singleton
     private static EnemyManager _instance;
-	public static EnemyManager Instance
-	{
-		get
-		{
-			if (_instance == null)
-			{
-				_instance = FindObjectOfType<EnemyManager>();
-			}
-			return _instance;
-		}
-	}
+    public static EnemyManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<EnemyManager>();
+            }
+            return _instance;
+        }
+    }
 
-	private void Awake()
-	{
-		if (_instance == null)
-		{
-			_instance = this;
-		}
-		else if (_instance != this)
-		{
-			Destroy(gameObject);
-		}
-	}
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else if (_instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
     #endregion
 
     #region variables
@@ -45,12 +45,13 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     {
-        movementSpeed -= GameManager.Instance.globalSpeed;
+        movementSpeed = GameManager.Instance.globalSpeed;
         spawnTimer = GameManager.Instance.spawnTimer;
         spawnInterval = GameManager.Instance.spawnInterval;
         characterPosition = GameObject.Find("Character").transform.position;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
         if (!playerContact)
         {
@@ -62,7 +63,7 @@ public class EnemyManager : MonoBehaviour
             }
             foreach (var enemy in aliveEnemyList)
             {
-                enemy.transform.position = (enemy.transform.position + new Vector3(movementSpeed, 0f, 0f) * Time.deltaTime);
+                enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, characterPosition, movementSpeed * Time.deltaTime);
             }
         }
     }
