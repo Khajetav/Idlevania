@@ -35,8 +35,8 @@ public class PlayerManager : MonoBehaviour
     }
     #endregion
 
-    public int maximumPlayerHealth;
     public int currentPlayerHealth;
+    public int maximumPlayerHealth;
     public int damage;
     public Animator playerAnimator;
 
@@ -53,10 +53,21 @@ public class PlayerManager : MonoBehaviour
             playerAnimator.SetTrigger("Revive");
             playerSprite.sprite = playerReviveSprite;
         }
+        maximumPlayerHealth = GameManager.Instance.maximumPlayerHealth;
+        damage = GameManager.Instance.damage;
+        currentPlayerHealth = maximumPlayerHealth;
     }
 
     public void PlayerDeathAnimation()
     {
         playerAnimator.SetTrigger("Death");
+    }
+    public void PlayerIdleAnimation()
+    {
+        playerAnimator.SetBool("Idle", true);
+    }
+    public void StopPlayerIdleAnimation()
+    {
+        playerAnimator.SetBool("Idle", false);
     }
 }

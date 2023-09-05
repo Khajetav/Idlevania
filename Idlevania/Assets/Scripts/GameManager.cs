@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -41,26 +42,52 @@ public class GameManager : MonoBehaviour
     public float globalSpeed = 0.075f;
     public float spawnTimer = 0f;
     public float spawnInterval = 5f;
+    [Header("Player configs")]
+    public int maximumPlayerHealth;
+    public int damage;
     #endregion Variables
+    [Header("Shop configuration")]
+    public int money;
+    public GameObject shopPanel;
+    public GameObject statsPanel;
+    public TextMeshProUGUI moneyText;
+
 
 
     // Start makes it so that the enemy spawning logic and border scrolling are paused
     private void Start()
     {
         Pause();
+        moneyText.text = money.ToString();
     }
 
-    // Character walking animation starts this
-    //public void StartGameplay()
-    //{
-    //}
     public void Resume()
     {
         scrollingTexture.enabled = true;
+        EnemyManager.Instance.playerContact = false;
     }
 
     public void Pause()
     {
         scrollingTexture.enabled = false;
+        EnemyManager.Instance.playerContact = true;
+    }
+
+    public void ShopInteraction()
+    {
+        if (!shopPanel.activeSelf)
+        {
+            Pause();
+            shopPanel.SetActive(true);
+            statsPanel.SetActive(false);
+            PlayerManager.Instance.PlayerIdleAnimation();
+        }
+        else if (!statsPanel.activeSelf)
+        {
+            Resume();
+            shopPanel.SetActive(false);
+            statsPanel.SetActive(true);
+            PlayerManager.Instance.StopPlayerIdleAnimation();
+        }
     }
 }
