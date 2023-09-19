@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     #endregion Variables
     [Header("Shop configuration")]
     public int money;
+    public int playerXP;
     public GameObject shopPanel;
     public GameObject statsPanel;
     public TextMeshProUGUI moneyText;
@@ -89,5 +90,12 @@ public class GameManager : MonoBehaviour
             statsPanel.SetActive(true);
             PlayerManager.Instance.StopPlayerIdleAnimation();
         }
+    }
+
+    public void UpdateXpAndMoneyText(int score)
+    {
+        money += score;
+        playerXP+= score;
+        moneyText.text = money.ToString();
     }
 }

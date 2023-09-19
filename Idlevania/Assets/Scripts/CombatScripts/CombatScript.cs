@@ -31,7 +31,7 @@ public class CombatScript : MonoBehaviour
         {
             maximumOpponentHealth = opponent.GetComponent<EnemyConstructor>().maximumEnemyHealth;
             currentOpponentHealth = maximumOpponentHealth;
-            animator.SetBool("AttackIdle",true);
+            animator.SetBool("FightingIdle",true);
             damage = PlayerManager.Instance.damage;
         }
     }
@@ -47,12 +47,13 @@ public class CombatScript : MonoBehaviour
             GameManager.Instance.Resume();
             // Enemies hovers towards player again
             EnemyManager.Instance.playerContact = false;
-            // Removes enemy from list. This could be deleted for later
+            // Removes enemy from list
             EnemyManager.Instance.RemoveDeadEnemyFromList();
             // Player stops Attacking Script
-            animator.SetBool("AttackIdle",false);
+            animator.SetBool("FightingIdle", false);
+            GameManager.Instance.UpdateXpAndMoneyText(opponent.GetComponent<EnemyConstructor>().score);
             // Enemy object gets deleted :0
-            Destroy(opponent.gameObject);
+            Destroy(opponent.gameObject); 
         }
     }
     public void EnemyAttack()
